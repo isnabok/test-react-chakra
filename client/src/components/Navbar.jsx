@@ -98,7 +98,7 @@ const Navbar = () => {
             fontSize="sm"
             fontWeight={400}
             _hover={{ bg: 'gray.500' }}
-            bg="gray.400"
+            bg="gray.700"
             color="white"
           >
             Sign Up
