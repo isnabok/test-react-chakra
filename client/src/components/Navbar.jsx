@@ -13,8 +13,9 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { Link as ReactLink } from 'react-router-dom';
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { GiFlamingo } from 'react-icons/gi';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { BsMoonStars, BsSun } from 'react-icons/bs';
+import { GiHeartNecklace } from 'react-icons/gi';
 
 const links = [
   {
@@ -58,9 +59,9 @@ const Navbar = () => {
         <HStack>
           <Link as={ReactLink} to="/">
             <Flex alignItems="center" gap={2}>
-              <Icon as={GiFlamingo} h={6} w={8} color="gray.500" />
+              <Icon as={GiHeartNecklace} h={6} w={8} color="gray.500" />
               <Text as="b" fontSize="lg">
-                Flamingo Store
+                ReactChakra
               </Text>
             </Flex>
           </Link>
@@ -73,13 +74,6 @@ const Navbar = () => {
           </HStack>
         </HStack>
         <Flex alignItems="center">
-          <NavLink>
-            <Icon
-              as={colorMode === 'light' ? MoonIcon : SunIcon}
-              alignSelf="center"
-              onClick={() => toggleColorMode()}
-            />
-          </NavLink>
           <Button
             as={ReactLink}
             to="/login"
@@ -103,6 +97,14 @@ const Navbar = () => {
           >
             Sign Up
           </Button>
+          <NavLink>
+            <Icon
+              as={colorMode === 'light' ? BsMoonStars : BsSun}
+              alignSelf="center"
+              onClick={() => toggleColorMode()}
+              color="gray.500 "
+            />
+          </NavLink>
         </Flex>
       </Flex>
       {isOpen ? (
